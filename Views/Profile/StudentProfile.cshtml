@@ -1,0 +1,127 @@
+﻿@model IEnumerable<_1262228_Arosh.Models.Student>
+
+@{
+    ViewBag.Title = "StudentProfile";
+}
+<br />
+<center><h2>StudentProfile</h2></center>
+
+
+
+
+<table class="table">
+    <tr style="font-size:11px;background-color:green;color:white;text-align:center">
+        <th>
+           Name
+        </th>
+        <th>
+            FatherName
+        </th>
+        <th>
+            MotherName
+        </th>
+        <th>
+        Gender
+        </th>
+        <th>
+            DOB
+        </th>
+        <th>
+            SSC Roll
+        </th>
+        <th>
+            HSC Roll
+        </th>
+        <th>
+        Unit
+        </th>
+        <th style="text-align:center">
+            Email
+        </th>
+        <th>
+            Mobile
+        </th>
+        <th>
+            Status
+        </th>
+        <th>
+            Age
+        </th>
+        <th>
+            Picture
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FatherName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MotherName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DOB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SSCRoll)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HSCRoll)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Unit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mobile)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>*@
+
+            <td>
+                @if (item.Status.Value)
+                {<text>Accepted</text>}
+            else
+            {<text>Pending</text>}
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                <img src="@Url.Content(item.Picture)" width="60" height="60" />
+            </td>
+            <td style="width:200px; font-size:12px">
+                @Html.ActionLink("Edit", "Edit", new { id = item.StudentID }, new { @class = "btn btn-warning btn-sm" })
+                @*@Html.ActionLink("Details", "Details", new { id = item.StudentID }, new { @class = "btn btn-info btn-sm" })
+                @Html.ActionLink("Delete", "Delete", new { id = item.StudentID }, new { @class = "btn btn-danger btn-sm" })*@
+            </td>
+
+        </tr>
+    }
+
+</table>
+
+<div id="div-record-Result">
+    @{Html.RenderAction("StudentResult");}
+</div>
+<div id="div-record-Seat">
+    @{Html.RenderAction("StudentSeatPlan");}
+</div>
+<div id="div-record-Seat">
+    @{Html.RenderAction("PaymentStatus");}
+</div>
+
+
+

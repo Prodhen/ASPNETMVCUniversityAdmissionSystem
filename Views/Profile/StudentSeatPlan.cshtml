@@ -1,0 +1,40 @@
+﻿@model IEnumerable<_1262228_Arosh.Models.SeatPlan>
+
+
+<center><h4 style="color:crimson">Seat Plan</h4></center>
+<table class="table">
+    <tr style="font-size:11px;background-color:green;color:white;text-align:center">
+        <th>
+            @Html.DisplayNameFor(model => model.Student.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Institution)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BuildingName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FloorNumber)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Student.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Institution)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BuildingName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FloorNumber)
+        </td>
+
+    </tr>
+}
+
+</table>

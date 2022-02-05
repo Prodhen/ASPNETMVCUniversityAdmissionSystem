@@ -1,0 +1,50 @@
+﻿@model _1262228_Arosh.Models.SeatPlanViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SeatPlan</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Student.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model=>model.Student.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Institution)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Institution)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BuildingName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BuildingName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FloorNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FloorNumber)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SeatPlanID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

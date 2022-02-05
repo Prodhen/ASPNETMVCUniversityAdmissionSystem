@@ -1,0 +1,82 @@
+﻿@model _1262228_Arosh.Models.Result
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+</head>
+<body>
+    @using (Ajax.BeginForm("Details", "Result", new AjaxOptions { HttpMethod = "GET", UpdateTargetId = "div-record", OnSuccess = "$('.close').click()" }))
+    {
+        <div>
+            <center>  <h4>Chack your Result!</h4></center>
+
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Student.Name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Student.Name)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Bangla)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Bangla)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.English)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.English)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.GeneralKnowlede)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.GeneralKnowlede)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Ict)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Ict)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.TotalMark)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.TotalMark)
+                </dd>
+
+            </dl>
+        </div>
+    }
+    <center>
+        <div>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.ResultID }, new { @class = "btn btn-warning btn-sm" })
+            @Html.ActionLink("Back to List", "Index", new { @class = "btn btn-warning btn-sm" })
+        </div>
+    </center>
+</body>
+</html>

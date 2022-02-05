@@ -1,0 +1,54 @@
+﻿@model IEnumerable<_1262228_Arosh.Models.Result>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<center><h4 style="color:crimson">Exam Result</h4></center>
+<table class="table">
+    <tr style="font-size:11px;background-color:green;color:white;text-align:center">
+        <th>
+            @Html.DisplayNameFor(model => model.Student.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bangla)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.English)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GeneralKnowlede)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ict)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalMark)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Student.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bangla)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.English)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GeneralKnowlede)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ict)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalMark)
+        </td>
+
+    </tr>
+}
+
+</table>

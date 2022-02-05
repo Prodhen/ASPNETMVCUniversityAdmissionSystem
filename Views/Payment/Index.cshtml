@@ -1,0 +1,47 @@
+﻿@model IEnumerable<_1262228_Arosh.Models.Payment>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<center><h2>Payment History</h2></center>
+
+<p>
+    @Html.ActionLink("Add Payment", "Create")
+</p>
+<table class="table">
+    <tr  style="font-size:11px;background-color:green;color:white;text-align:center">
+        <th>
+            @Html.DisplayNameFor(model => model.Student.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Amount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Transaction)
+        </th>
+        <th>
+            Action
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Student.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Amount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Transaction)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PaymentID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PaymentID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PaymentID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,76 @@
+﻿@model _1262228_Arosh.Models.SeatPlanViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>SeatPlan</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Institution, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("Institution", new List<SelectListItem> {
+                    new SelectListItem{Text="University of Dhaka",Value="University of Dhaka"},
+                    new SelectListItem{Text="Jahangirnagar University",Value="Jahangirnagar University"},
+                    new SelectListItem{Text="University of Chittagong",Value="University of Chittagong"},
+                    new SelectListItem{Text="University of Rajshahi",Value="University of Rajshahi"}}, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Institution, "", new { @class = "text-danger" })
+
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.BuildingName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("BuildingName", new List<SelectListItem> {
+                new SelectListItem{Text="Arts Building",Value="Arts Building"},
+                new SelectListItem{Text="Science Building",Value="Science Building"},
+                new SelectListItem{Text="Social Science Building",Value="Social Science Building"},
+                new SelectListItem{Text="Engineering Building",Value="Engineering Building"},
+                new SelectListItem{Text="Business Studies Building",Value="Business Studies Building"}}, htmlAttributes: new { @class = "form-control" })
+
+                @Html.ValidationMessageFor(model => model.BuildingName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FloorNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FloorNumber, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FloorNumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.StudentID, "StudentID", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("StudentID", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.StudentID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
